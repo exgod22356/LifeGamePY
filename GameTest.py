@@ -20,7 +20,7 @@ class GameTest(unittest.TestCase):
         self.assertEqual(gui.pause(), 0, "error")
 
     # 测试GUI界面重置
-    def test_resetgui(self):
+    def test_reset_gui(self):
         gui = GUI(10, 10)
         for i in range(10):
             for j in range(10):
@@ -31,7 +31,7 @@ class GameTest(unittest.TestCase):
                 self.assertEqual(gui.frame.GameMap[i][j], 0, "error")
 
     # 测试获取单个细胞周围存活细胞数
-    def test_getneighbor(self):
+    def test_get_neighbor(self):
         mainframe = MainFrame(100, 100)
         mainframe.GameMap[0][0] = 1
         mainframe.GameMap[0][1] = 1
@@ -174,11 +174,11 @@ if __name__ == '__main__':
 
     suite.addTest(GameTest("test_start"))  # 测试游戏开始
     suite.addTest(GameTest("test_pause"))  # 测试游戏暂停
-    suite.addTest(GameTest("test_getneighbor"))  # 测试 获取该方格周边存活数量
+    suite.addTest(GameTest("test_get_neighbor"))  # 测试 获取该方格周边存活数量
     suite.addTest(GameTest("test_change_status"))  # 测试 改变该方格存活状态
     suite.addTest(GameTest("test_next_phrase"))  # 测试 改变全部方格状态
     suite.addTest(GameTest("test_reset"))  # 测试 重置内部数组
-    suite.addTest(GameTest("test_resetgui"))  # 测试 重置棋盘
+    suite.addTest(GameTest("test_reset_gui"))  # 测试 重置棋盘
 
     runner = unittest.TextTestRunner()
     runner.run(suite)

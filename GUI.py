@@ -1,4 +1,5 @@
 import pygame
+import profile
 from MainFrame import MainFrame
 
 
@@ -24,12 +25,13 @@ class GUI:
         pygame.draw.rect(self.screen, (255, 255, 255), ((155, 5), (140, 50)))
         pygame.draw.rect(self.screen, (255, 255, 255), ((305, 5), (140, 50)))
         pygame.draw.rect(self.screen, (255, 255, 255), ((455, 5), (140, 50)))
-        self.screen.blit(self.drawText("start"), (50, 20))
-        self.screen.blit(self.drawText("pause"), (200, 20))
-        self.screen.blit(self.drawText("reset"), (350, 20))
-        self.screen.blit(self.drawText("random"), (490, 20))
+        self.screen.blit(self.draw_text("start"), (50, 20))
+        self.screen.blit(self.draw_text("pause"), (200, 20))
+        self.screen.blit(self.draw_text("reset"), (350, 20))
+        self.screen.blit(self.draw_text("random"), (490, 20))
 
-    def drawText(self, content):
+    @staticmethod
+    def draw_text(content):
         try:
             pygame.font.init()
             font = pygame.font.Font(None, 30)
@@ -111,6 +113,7 @@ class GUI:
 if __name__ == '__main__':
     gui = GUI(30, 30)
     gui.random_init()
+
     gui.mainloop()
 
     # print(event.pos)

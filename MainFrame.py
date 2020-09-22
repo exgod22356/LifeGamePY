@@ -1,14 +1,11 @@
-import pygame
 import random
 import copy
-import os
-import time
 
 
 class MainFrame:
     def __init__(self, row, column):
-        self.GameMap = [[0 for i in range(column)] for j in range(row)]
-        self.NextMap = [[0 for i in range(column)] for j in range(row)]
+        self.GameMap = [[0 for _ in range(column)] for _ in range(row)]
+        self.NextMap = [[0 for _ in range(column)] for _ in range(row)]
         self.GameStatus = 0
         self.Row = row
         self.Column = column
