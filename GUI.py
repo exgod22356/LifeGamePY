@@ -1,5 +1,4 @@
 import pygame
-import profile
 from MainFrame import MainFrame
 
 
